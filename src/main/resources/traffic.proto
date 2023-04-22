@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.energy.smartcity.traffic";
+option java_outer_classname = "TrafficServiceImpl";
+
+package SmartCityServices;
+
+//service definition
+service TrafficLights{
+	rpc autoTrafficL(autoOnRequest) returns (autoOnReply){}
+	rpc emergencyTraffic(emerTrafficOnRequest) returns (emerTrafficOnReply){}
+	rpc autoSignals(signalsRequest) returns (signalsReply){}
+}
+
+//Define the messages
+message autoOnRequest{
+	string AutoTraffic = 1;
+
+}
+message emerTrafficOnRequest{
+	string EmergencyTraffic = 1;
+}
+message signalsRequest{
+	string AutoSignals = 1;
+}
+message autoOnReply{
+	string AutoTraffic = 1;
+}
+message emerTrafficOnReply{
+	string EmergencyTraffic = 1;
+}
+message signalsReply{
+	string AutoSignals = 1;
+}

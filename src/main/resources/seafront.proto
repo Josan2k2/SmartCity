@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.energy.smartcity.seafront";
+option java_outer_classname = "SeafrontServiceImpl";
+
+package SmartCityServices;
+
+//service definition
+service SeafrontLights{
+	rpc seaLights(frontRequest) returns (frontOnReply){}
+	rpc lifeguardStations(stationsRequest) returns (stationsReply){}
+	rpc medical(rescuersRequest) returns (rescuersReply){}
+}
+
+//Define the messages
+message frontRequest{
+	string Seafront = 1;
+
+}
+message stationsRequest{
+	string Lifeguards = 1;
+}
+message rescuersRequest{
+	string MedicalRescuers = 1;
+}
+message frontOnReply{
+	string SeafrontReply = 1;
+}
+message stationsReply{
+	string LifeguardsReply = 1;
+}
+message rescuersReply{
+	string MedicalRescuersReply = 1;
+}

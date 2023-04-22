@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.energy.smartcity.park";
+option java_outer_classname = "ParkServiceImpl";
+
+package SmartCityServices;
+
+//service definition
+service ParkLights{
+	rpc Emergency(emergencyOnRequest) returns (emergencyOnReply){}
+	rpc PolesOn(polesOnRequest) returns (polesOnReply){}
+	rpc PolesOff(polesOffRequest) returns (polesOffReply){}
+}
+
+//Define the messages
+message emergencyOnRequest{
+	string emergency = 1;
+
+}
+message polesOnRequest{
+	string poles = 1;
+}
+message polesOffRequest{
+	string poles = 1;
+}
+message emergencyOnReply{
+	string emergencyOn = 1;
+}
+message polesOnReply{
+	string polesOn = 1;
+}
+message polesOffReply{
+	string polesOff = 1;
+}
